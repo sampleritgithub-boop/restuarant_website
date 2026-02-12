@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Delicious Bites Restaurant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
+
+body{background:#f8f8f8;}
+
+header{
+    background:#8B0000;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+nav{
+    background:#333;
+    padding:10px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 15px;
+}
+
+nav a:hover{color:#ffcc00;}
+
+.hero{
+    background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') no-repeat center/cover;
+    height:300px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.hero h1{
+    background:rgba(0,0,0,0.6);
+    padding:20px;
+    border-radius:10px;
+}
+
+section{padding:40px;text-align:center;}
+
+.menu-items{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.item{
+    background:white;
+    width:220px;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+}
+
+button{
+    padding:10px 15px;
+    background:#8B0000;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ffcc00;
+    color:black;
+}
+
+.form-box{
+    background:white;
+    max-width:400px;
+    margin:auto;
+    padding:25px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+input, select, textarea{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+    border-radius:5px;
+    border:1px solid #ccc;
+}
+
+.contact{
+    background:#333;
+    color:white;
+}
+
+footer{
+    background:#8B0000;
+    color:white;
+    padding:15px;
+    text-align:center;
+}
+
+#paymentSection{
+    display:none;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Delicious Bites</h1>
+<p>Fresh • Tasty • Authentic</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#menu">Menu</a>
+<a href="#login">Customer Review</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero" id="home">
+<h1>Welcome to Delicious Bites</h1>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+<h2>Our Special Menu</h2><br>
+
+<div class="menu-items">
+
+<div class="item">
+<h3>Pizza</h3>
+<p>₹299</p>
+<button onclick="showPayment('Pizza - ₹299')">Order Now</button>
+</div>
+
+<div class="item">
+<h3>Burger</h3>
+<p>₹149</p>
+<button onclick="showPayment('Burger - ₹149')">Order Now</button>
+</div>
+
+<div class="item">
+<h3>Pasta</h3>
+<p>₹199</p>
+<button onclick="showPayment('Pasta - ₹199')">Order Now</button>
+</div>
+
+<div class="item">
+<h3>Veg Momos</h3>
+<p>₹120</p>
+<button onclick="showPayment('Veg Momos - ₹120')">Order Now</button>
+</div>
+
+<div class="item">
+<h3>Chicken Momos</h3>
+<p>₹150</p>
+<button onclick="showPayment('Chicken Momos - ₹150')">Order Now</button>
+</div>
+
+<div class="item">
+<h3>Hakka Noodles</h3>
+<p>₹180</p>
+<button onclick="showPayment('Hakka Noodles - ₹180')">Order Now</button>
+</div>
+
+<div class="item">
+<h3>Fried Rice</h3>
+<p>₹170</p>
+<button onclick="showPayment('Fried Rice - ₹170')">Order Now</button>
+</div>
+
+</div>
+</section>
+
+<!-- PAYMENT SECTION -->
+<section id="paymentSection">
+<h2>Payment Page</h2><br>
+
+<div class="form-box">
+<form id="paymentForm">
+
+<input type="text" id="customerName" placeholder="Enter Name" required>
+
+<input type="text" id="selectedItem" readonly>
+
+<select required>
+<option>Select Payment Method</option>
+<option>UPI</option>
+<option>Card</option>
+<option>Cash</option>
+</select>
+
+<button type="submit">Pay Now</button>
+
+</form>
+
+<p id="paymentMessage" style="color:green;"></p>
+</div>
+</section>
+
+<!-- REVIEW -->
+<section id="login">
+<h2>Customer Review</h2><br>
+
+<div class="form-box">
+<form id="reviewForm">
+
+<input type="text" id="reviewName" placeholder="Enter Name" required>
+<input type="email" placeholder="Enter Email" required>
+
+<select required>
+<option>Select Rating</option>
+<option>⭐⭐⭐⭐⭐</option>
+<option>⭐⭐⭐⭐</option>
+<option>⭐⭐⭐</option>
+<option>⭐⭐</option>
+<option>⭐</option>
+</select>
+
+<textarea placeholder="Write Review" required></textarea>
+
+<button type="submit">Submit</button>
+</form>
+
+<p id="reviewMessage" style="color:green;"></p>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<h2>Contact Us</h2><br>
+<p>📍 Pune, India</p>
+<p>📞 +91 9876543210</p>
+<p>📧 deliciousbites@gmail.com</p>
+</section>
+
+<footer>
+<p>© 2026 Delicious Bites Restaurant</p>
+</footer>
+
+<script>
+function showPayment(item){
+    document.getElementById("paymentSection").style.display="block";
+    document.getElementById("selectedItem").value=item;
+    window.location.href="#paymentSection";
+}
+
+document.getElementById("paymentForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    let name=document.getElementById("customerName").value;
+    document.getElementById("paymentMessage").innerText=
+    "Payment Successful! Thank you "+name+" 🎉";
+    this.reset();
+});
+
+document.getElementById("reviewForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    let name=document.getElementById("reviewName").value;
+    document.getElementById("reviewMessage").innerText=
+    "Thank you "+name+" for your review!";
+    this.reset();
+});
+</script>
+
+</body>
+</html>
